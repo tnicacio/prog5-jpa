@@ -12,5 +12,5 @@ import java.util.List;
 public interface CompromissoDAO extends DaoGeneric<Compromisso>{
  
     List<Compromisso> findByLocal(Local local);
-    Compromisso findByContato(Contato contato);
+    List<Compromisso> findByContato(Contato contato);
 }

@@ -62,21 +62,20 @@ public class Program {
         
 //        System.out.println(compromissoDao.findByLocal(localDoCompromisso1 )
 //                .stream().map(x -> x.getId()).collect(Collectors.toList()));
-//        List<Contato> contatos1 = contatoDao.findByNome("maria");
-//        if (contatos1.size() > 0) {
-//            System.out.println(compromissoDao.findByContato(contatos1.get(0)).getData());
-//        }
+        List<Contato> contatos1 = contatoDao.findByNome("tiago");
+        if (contatos1.size() > 0 && contatos1.get(0) != null) {
+            System.out.println(compromissoDao.findByContato(contatos1.get(0))
+                    .stream().map(comp -> comp.getHora()).collect(Collectors.toList()));
+        }
         
 //        System.out.println(
 //        compromissoDao.findByLocal(localDoCompromisso1).get(0).getParticipantes().get(0).getContato().getNome()
 //        );
 //  
-//        Compromisso comp1 = compromissoDao.findById(2L);
-//        Participante participante1 = participanteDao.findById(2L);
-//        participante1.getCompromissos().add(comp1);
+//        Compromisso comp2 = compromissoDao.findById(2L);
+//        Participante participante1 = participanteDao.findById(1L);
+//        participante1.getCompromissos().add(comp2);
 //        participanteDao.update(participante1);
-        
-// All OK until here
 
 //        Contato contato = contatoDao.findById(2L);
 //        if (contato != null) {

@@ -49,32 +49,32 @@ public class CompromissoDaoEM implements CompromissoDAO {
     }
 
     @Override
-    public Compromisso findByContato(Contato contato) {
+    public List<Compromisso> findByContato(Contato contato) {
 
-        Compromisso compromisso = null;
+        List<Compromisso> compromissos = new ArrayList<>();
         if (contato == null || contato.getId() == null) {
-            return compromisso;
+            return compromissos;
         }
 
         try {
             em = EM.getEntityManager();
 
-            compromisso = em.createQuery(
+            compromissos = em.createQuery(
                     "SELECT c FROM Compromisso c "
                     + "JOIN c.participantes part "
                     + "JOIN part.contato cont "
                     + "WHERE cont = :contato", Compromisso.class)
                     .setParameter("contato", contato)
-                    .getSingleResult();
+                    .getResultList();
 
-            System.out.println("Busca pelo Compromisso do Contato " + contato.getNome() + " finalizada");
+            System.out.println("Busca pelos Compromissos do Contato " + contato.getNome() + " finalizada");
         } catch (Exception e) {
-            System.out.println("Erro na busca pelo Compromisso do Contato " + contato.getNome());
+            System.out.println("Erro na busca pelos Compromissos do Contato " + contato.getNome());
             System.out.println(e.getMessage());
         } finally {
             EM.close();
         }
-        return compromisso;
+        return compromissos;
     }
 
     @Override
