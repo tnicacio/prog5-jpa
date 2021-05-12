@@ -1,7 +1,7 @@
 # Gerenciador de Compromissos
 Trabalho para a disciplina de Programação 5 do Instituto Federal Catarinense
 
-## Enunciado do Trabalho
+## :book: Enunciado do Trabalho
 Crie um projeto em Java utilizando JPA que crie a base a partir do diagrama de classe
 abaixo. <br/> Devem ser criados os métodos que permitam o acesso aos dados de todas as
 classes para as operações de: <br/> <br/>
@@ -19,10 +19,10 @@ Obs: <br/>
 - Deve ser criado utilizando a abordagem codefirst; <br/>
 - O nome da base deve ser jpacodfirst; <br/>
 
-### Diagrama de classes
+### Diagrama de Classes
+![Diagrama de Classes](https://user-images.githubusercontent.com/50798315/118049285-ea549000-b353-11eb-9c69-b70c494f77c4.png)
 
-
-## Requisitos
+## :scroll: Requisitos
 Com base no enunciado do trabalho foram desenvolvidos os requisitos funcionais e não-funcionais
 
 ### Funcionais
@@ -40,3 +40,7 @@ Com base no enunciado do trabalho foram desenvolvidos os requisitos funcionais e
 <strong>RNF02:</strong> Deverá ser utilizada a abordagem code-first <br/>
 <strong>RNF03:</strong> O nome da base de dados deve ser jpacodfirst <br/>
 
+## :computer: Ferramentas Utilizadas
+- PostgreSQL
+- pgAdmin 4
+- Netbeans 12
