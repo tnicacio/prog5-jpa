@@ -40,6 +40,10 @@ Com base no enunciado do trabalho foram desenvolvidos os requisitos funcionais e
 <strong>RNF02:</strong> Deverá ser utilizada a abordagem code-first <br/>
 <strong>RNF03:</strong> O nome da base de dados deve ser jpacodfirst <br/>
 
+## :nerd_face: Como testar
+1. Clone este repositório através do comando ```git clone git@github.com:tnicacio/prog5-jpa.git``` <br/>
+2. Execute a aplicação que possui [Program](https://github.com/tnicacio/prog5-jpa/blob/main/src/main/java/com/tnicacio/trabjpa/application/Program.java) como sua classe principal.
+
 ## :computer: Ferramentas Utilizadas
 - PostgreSQL
 - pgAdmin 4
