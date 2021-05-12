@@ -2,7 +2,6 @@ package com.tnicacio.trabjpa.model.dao.impl;
 
 import com.tnicacio.trabjpa.em.EM;
 import com.tnicacio.trabjpa.model.dao.LocalDAO;
-import com.tnicacio.trabjpa.model.dao.ParticipanteDAO;
 import com.tnicacio.trabjpa.model.entities.Local;
 import java.util.ArrayList;
 import java.util.List;
