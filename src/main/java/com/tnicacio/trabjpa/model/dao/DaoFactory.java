@@ -1,6 +1,7 @@
 package com.tnicacio.trabjpa.model.dao;
 
 import com.tnicacio.trabjpa.em.EM;
+import com.tnicacio.trabjpa.model.dao.impl.CompromissoDaoEM;
 import com.tnicacio.trabjpa.model.dao.impl.ContatoDaoEM;
 import com.tnicacio.trabjpa.model.dao.impl.LocalDaoEM;
 import com.tnicacio.trabjpa.model.dao.impl.ParticipanteDaoEM;
@@ -21,5 +22,9 @@ public class DaoFactory {
 
     public static LocalDAO createLocalDao(){
         return new LocalDaoEM(EM.getEntityManager());
+    }
+
+    public static CompromissoDAO createCompromissoDao(){
+        return new CompromissoDaoEM(EM.getEntityManager());
     }
 }

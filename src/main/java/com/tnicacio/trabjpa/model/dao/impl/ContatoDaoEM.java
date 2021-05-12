@@ -37,7 +37,7 @@ public class ContatoDaoEM implements ContatoDAO {
                 .setParameter("nome", nomeToUpperCase)
                 .getResultList();
             
-            System.out.println("Busca pelo Produto com descrição '" + nome + "' finalizada");
+            System.out.println("Busca pelo Contato com descrição '" + nome + "' finalizada");
         } catch(Exception e) {
             System.out.println("Erro na busca pelos Contatos com descrição '" + nome + "'");
             System.out.println(e.getMessage());

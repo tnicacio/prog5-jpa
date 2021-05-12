@@ -1,8 +1,21 @@
 package com.tnicacio.trabjpa.application;
 
+import com.tnicacio.trabjpa.model.dao.CompromissoDAO;
 import com.tnicacio.trabjpa.model.dao.ContatoDAO;
 import com.tnicacio.trabjpa.model.dao.DaoFactory;
+import com.tnicacio.trabjpa.model.dao.LocalDAO;
+import com.tnicacio.trabjpa.model.dao.ParticipanteDAO;
+import com.tnicacio.trabjpa.model.entities.Compromisso;
 import com.tnicacio.trabjpa.model.entities.Contato;
+import com.tnicacio.trabjpa.model.entities.Local;
+import com.tnicacio.trabjpa.model.entities.Participante;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.Month;
+import java.util.Arrays;
+import java.sql.Date;
+import java.sql.Time;
+import java.util.List;
 import java.util.stream.Collectors;
 
 /**
@@ -13,9 +26,57 @@ public class Program {
     
     public static void main(String... args) {
         ContatoDAO contatoDao = DaoFactory.createContatoDao();
+        LocalDAO localDao = DaoFactory.createLocalDao();
+        ParticipanteDAO participanteDao = DaoFactory.createParticipanteDao();
+        CompromissoDAO compromissoDao = DaoFactory.createCompromissoDao();
+
+//        Contato contato1 = new Contato(null, "Tiago", "1234-1234", "tiago@mail.com");
+//        Contato contato2 = new Contato(null, "João", "3333-3333", "jao@mail.com");
+//        Contato contato3 = new Contato(null, "Maria", "9876-5432", "maria@mail.com");
+//        Contato contato4 = new Contato(null, "Zezinho", "1111-2222", "ze@mail.com");
+//        List<Contato> contatos = Arrays.asList(contato1, contato2, contato3, contato4);
+//        contatos.stream().forEach(contato -> contatoDao.insert(contato));
+//        
+//        Local local1 = new Local(null, "Apartamento", "Rua João Pessoa", "Centro", "Blumenau", "631", "89012-471");
+//        Local local2 = new Local(null, "Casa", "Rua dos Alfaiates", "Velha", "São Paulo", "312", "55555-432");
+//        Local local3 = new Local(null, "Sítio", "Rodovia", "BR-101", "Tapapino", "Fictício", "12345-678");
+//        List<Local> locais = Arrays.asList(local1, local2, local3);
+//        locais.stream().forEach(local -> localDao.insert(local));
+//        
+//        try {
+//            Participante participante1 = new Participante(null, Boolean.TRUE, contatoDao.findByNome("tiago").get(0));
+//            Participante participante2 = new Participante(null, Boolean.TRUE, contatoDao.findByNome("maria").get(0));
+//            List<Participante> participantes = Arrays.asList(participante1, participante2);
+//            participantes.stream().forEach(participante -> participanteDao.insert(participante));
+//        } catch (Exception e){
+//            System.out.println(e.getMessage());
+//        }
+//        
+//        Local localDoCompromisso1 = localDao.findById(1L);
+//        Compromisso compromisso1 = new Compromisso(null, 
+//                                        Date.valueOf(LocalDate.of(2021,Month.FEBRUARY, 12)), 
+//                                        Time.valueOf(LocalTime.of(14, 30)),
+//                                        Time.valueOf(LocalTime.of(0, 30)),
+//                                        localDoCompromisso1);
+//        compromissoDao.insert(compromisso1);
         
-        Contato contato1 = new Contato(null, "Tiago", "1234-1234", "email@mail.com");
-        contatoDao.insert(contato1);
+//        System.out.println(compromissoDao.findByLocal(localDoCompromisso1 )
+//                .stream().map(x -> x.getId()).collect(Collectors.toList()));
+//        List<Contato> contatos1 = contatoDao.findByNome("maria");
+//        if (contatos1.size() > 0) {
+//            System.out.println(compromissoDao.findByContato(contatos1.get(0)).getData());
+//        }
+        
+//        System.out.println(
+//        compromissoDao.findByLocal(localDoCompromisso1).get(0).getParticipantes().get(0).getContato().getNome()
+//        );
+//  
+//        Compromisso comp1 = compromissoDao.findById(2L);
+//        Participante participante1 = participanteDao.findById(2L);
+//        participante1.getCompromissos().add(comp1);
+//        participanteDao.update(participante1);
+        
+// All OK until here
 
 //        Contato contato = contatoDao.findById(2L);
 //        if (contato != null) {
@@ -30,6 +91,6 @@ public class Program {
 //        System.out.println(contatoDao.findByNome("ag").stream().map(x -> x.getNome()).collect(Collectors.toList()));
         
 //        contatoDao.deleteById(1L);
-        System.out.println(contatoDao.findAll().stream().map(x -> x.getNome()).collect(Collectors.toList()));
+
     }
 }

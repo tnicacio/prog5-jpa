@@ -1,11 +1,11 @@
 package com.tnicacio.trabjpa.model.entities;
 
 import java.io.Serializable;
-import java.time.LocalTime;
+import java.sql.Time;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +13,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -29,14 +28,11 @@ public class Compromisso  implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(columnDefinition = "DATE")
-    private LocalTime data;
+    private Date data;
     
-    @Column(columnDefinition = "TIME")
-    private LocalTime hora;
+    private Time hora;
     
-    @Column(columnDefinition = "TIME")
-    private LocalTime duracao;
+    private Time duracao;
     
     @ManyToOne
     @JoinColumn(name = "local_id")
@@ -47,7 +43,7 @@ public class Compromisso  implements Serializable {
     
     public Compromisso(){}
 
-    public Compromisso(Long id, LocalTime data, LocalTime hora, LocalTime duracao, Local local) {
+    public Compromisso(Long id, Date data, Time hora, Time duracao, Local local) {
         this.id = id;
         this.data = data;
         this.hora = hora;
@@ -63,27 +59,27 @@ public class Compromisso  implements Serializable {
         this.id = id;
     }
 
-    public LocalTime getData() {
+    public Date getData() {
         return data;
     }
 
-    public void setData(LocalTime data) {
+    public void setData(Date data) {
         this.data = data;
     }
 
-    public LocalTime getHora() {
+    public Time getHora() {
         return hora;
     }
 
-    public void setHora(LocalTime hora) {
+    public void setHora(Time hora) {
         this.hora = hora;
     }
 
-    public LocalTime getDuracao() {
+    public Time getDuracao() {
         return duracao;
     }
 
-    public void setDuracao(LocalTime duracao) {
+    public void setDuracao(Time duracao) {
         this.duracao = duracao;
     }
 
