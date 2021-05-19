@@ -9,12 +9,6 @@ import com.tnicacio.trabjpa.model.entities.Compromisso;
 import com.tnicacio.trabjpa.model.entities.Contato;
 import com.tnicacio.trabjpa.model.entities.Local;
 import com.tnicacio.trabjpa.model.entities.Participante;
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.Month;
-import java.util.Arrays;
-import java.sql.Date;
-import java.sql.Time;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -53,29 +47,35 @@ public class Program {
 //        }
 //        
 //        Local localDoCompromisso1 = localDao.findById(1L);
-//        Compromisso compromisso1 = new Compromisso(null, 
-//                                        Date.valueOf(LocalDate.of(2021,Month.FEBRUARY, 12)), 
-//                                        Time.valueOf(LocalTime.of(14, 30)),
-//                                        Time.valueOf(LocalTime.of(0, 30)),
-//                                        localDoCompromisso1);
-//        compromissoDao.insert(compromisso1);
+        Local localDoCompromisso2 = localDao.findById(2L);
         
-//        System.out.println(compromissoDao.findByLocal(localDoCompromisso1 )
-//                .stream().map(x -> x.getId()).collect(Collectors.toList()));
+        System.out.println("find (Compromisso) ByLocal: " +
+        compromissoDao.findByLocal(localDoCompromisso2).stream()
+            .map(compromisso -> compromisso.getId()).collect(Collectors.toList()));
+        
         List<Contato> contatos1 = contatoDao.findByNome("tiago");
         if (contatos1.size() > 0 && contatos1.get(0) != null) {
-            System.out.println(compromissoDao.findByContato(contatos1.get(0))
+            System.out.println("find (Compromisso) ByContato: " + compromissoDao.findByContato(contatos1.get(0))
                     .stream().map(comp -> comp.getHora()).collect(Collectors.toList()));
         }
         
-//        System.out.println(
-//        compromissoDao.findByLocal(localDoCompromisso1).get(0).getParticipantes().get(0).getContato().getNome()
-//        );
+//        Compromisso compromisso3 = new Compromisso(null, 
+//                                        Date.valueOf(LocalDate.of(2021,Month.FEBRUARY, 25)), 
+//                                        Time.valueOf(LocalTime.of(10, 29)),
+//                                        Time.valueOf(LocalTime.of(0, 30)),
+//                                        localDoCompromisso2);
+//        compromissoDao.insert(compromisso3);
+        
+//        System.out.println(compromissoDao.findByLocal(localDoCompromisso1 )
+//                .stream().map(x -> x.getId()).collect(Collectors.toList()));
+
+        
+
 //  
-//        Compromisso comp2 = compromissoDao.findById(2L);
-//        Participante participante1 = participanteDao.findById(1L);
-//        participante1.getCompromissos().add(comp2);
-//        participanteDao.update(participante1);
+//        Compromisso comp3 = compromissoDao.findById(3L);
+//        Participante participante2 = participanteDao.findById(2L);
+//        participante2.getCompromissos().add(comp3);
+//        participanteDao.update(participante2);
 
 //        Contato contato = contatoDao.findById(2L);
 //        if (contato != null) {
