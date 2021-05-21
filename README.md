@@ -35,8 +35,8 @@ Com base no enunciado do trabalho foram desenvolvidos os requisitos funcionais e
 <strong>RF07:</strong> O sistema deve permitir consultar compromissos pelo local ```Compromisso.findByLocal``` <br/>
 <strong>RF08:</strong> O sistema deve permitir consultar compromissos pelo contato ```Compromisso.findByContato``` <br/>
 <strong>RF09:</strong> Um Participante deve possuir um único Contato, e um Contato está atribuído a um único Participante <br/>
-<strong>RF10:</strong> Um Participante pode possuir 0 ou N compromissos, e um Compromisso pode estar atribuído a 0 ou N participantes <br/>
-<strong>RF11:</strong> Um Compromisso deve possuir um único Local, e um Local pode estar atribuído a 0 ou N compromissos<br/> 
+<strong>RF10:</strong> Um Participante pode possuir 1 ou N compromissos, e um Compromisso pode estar atribuído a 1 ou N participantes <br/>
+<strong>RF11:</strong> Um Compromisso deve possuir um único Local, e um Local pode estar atribuído a 1 ou N compromissos<br/> 
 
 ### Não-funcionais
 <strong>RNF01:</strong> Deve ser programado em Java, utilizando JPA <br/>
